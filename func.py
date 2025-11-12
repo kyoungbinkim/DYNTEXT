@@ -31,17 +31,17 @@ getcontext().prec = 100
 #os.environ["http_proxy"] = "http://127.0.0.1:10809"
 #os.environ["https_proxy"] = "http://127.0.0.1:10809"
 
-tokenizer = GPT2Tokenizer.from_pretrained("../gpt2",force_download=True)
+tokenizer = GPT2Tokenizer.from_pretrained("openai-community/gpt2",force_download=True)
 
 def get_first_50_tokens(text):
-    tokenizer = GPT2Tokenizer.from_pretrained("../gpt2")
+    tokenizer = GPT2Tokenizer.from_pretrained("openai-community/gpt2")
     tokens = tokenizer.tokenize(text)
     first_50_tokens = tokens[:50]
     tokenized_string = tokenizer.convert_tokens_to_string(first_50_tokens)
     return tokenized_string
 
 def get_50_150_tokens(text):
-    tokenizer = GPT2Tokenizer.from_pretrained("../gpt2")
+    tokenizer = GPT2Tokenizer.from_pretrained("openai-community/gpt2")
     tokens = tokenizer.tokenize(text)
     after_50_tokens = tokens[50:150]
     tokenized_string = tokenizer.convert_tokens_to_string(after_50_tokens)
@@ -54,7 +54,7 @@ def get_first_500_tokens(text):
     return tokenized_string
 
 def get_first_100_tokens(text):
-    tokenizer = GPT2Tokenizer.from_pretrained("../gpt2")
+    tokenizer = GPT2Tokenizer.from_pretrained("openai-community/gpt2")
     tokens = tokenizer.tokenize(text)
     first_100_tokens = tokens[:100]
     tokenized_string = tokenizer.convert_tokens_to_string(first_100_tokens)
